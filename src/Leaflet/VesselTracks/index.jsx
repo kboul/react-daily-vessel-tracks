@@ -5,9 +5,9 @@ import 'leaflet.markercluster/dist/leaflet.markercluster';
 import 'leaflet.animatedmarker/src/AnimatedMarker';
 import { useLeaflet } from 'react-leaflet';
 
+import AnimateVesselTrack from './AnimateVesselTrack';
 import PopupContent from './PopupContent';
 import Spinner from '../../Spinner';
-import AnimateVesselTrack from './AnimateVesselTrack';
 import useVesselTracksFetcher from './hooks';
 import { customMarker } from '../constants';
 
@@ -19,12 +19,12 @@ const VesselTracks = () => {
     const [vesselTracks, loading] = useVesselTracksFetcher();
 
     useEffect(() => {
-        vesselTracks.forEach(vesselTrack => {
+        vesselTracks.forEach((vesselTrack) => {
             const lat = parseFloat(vesselTrack.LAT);
             const lon = parseFloat(vesselTrack.LON);
 
             L.marker(new L.LatLng(lat, lon), {
-                icon: customMarker
+                icon: customMarker,
             })
                 .addTo(mcg)
                 .bindPopup(

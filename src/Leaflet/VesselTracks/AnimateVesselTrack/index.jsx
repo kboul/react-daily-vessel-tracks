@@ -12,6 +12,7 @@ let line;
 let animatedMarker;
 
 const AnimateVesselTrack = ({ latlngs }) => {
+    console.log(latlngs);
     const { map } = useLeaflet();
 
     const stopAnimAndRemovePath = () => {
@@ -23,17 +24,17 @@ const AnimateVesselTrack = ({ latlngs }) => {
         }
     };
 
-    const startAnimation = () => {
+    const startAnimation = () => () => {
         line = L.polyline(latlngs, {
             color: '#02929b',
-            weight: 1.5
+            weight: 1.5,
         }).addTo(map);
 
         animatedMarker = L.animatedMarker(line.getLatLngs(), {
             icon: customMarker,
             distance: 500,
             interval: 2000,
-            onEnd: () => stopAnimAndRemovePath()
+            onEnd: () => stopAnimAndRemovePath(),
         });
 
         map.addLayer(animatedMarker);
@@ -43,7 +44,7 @@ const AnimateVesselTrack = ({ latlngs }) => {
         });
     };
 
-    const stopAnimation = () => stopAnimAndRemovePath();
+    const stopAnimation = () => () => stopAnimAndRemovePath();
 
     return (
         <>
@@ -51,7 +52,7 @@ const AnimateVesselTrack = ({ latlngs }) => {
                 <button
                     type="button"
                     className={styles.animateControl}
-                    onClick={() => startAnimation()}>
+                    onClick={startAnimation()}>
                     Start animation
                 </button>
             </Control>
@@ -59,7 +60,7 @@ const AnimateVesselTrack = ({ latlngs }) => {
                 <button
                     type="button"
                     className={styles.animateControl}
-                    onClick={() => stopAnimation()}>
+                    onClick={stopAnimation()}>
                     Stop animation
                 </button>
             </Control>
@@ -68,7 +69,7 @@ const AnimateVesselTrack = ({ latlngs }) => {
 };
 
 AnimateVesselTrack.propTypes = {
-    latlngs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+    latlngs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
 };
 
 export default AnimateVesselTrack;

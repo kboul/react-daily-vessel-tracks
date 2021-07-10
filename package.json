@@ -1,21 +1,21 @@
 {
     "name": "react-daily-vessel-tracks",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "homepage": "https://kboul.github.io/react-daily-vessel-tracks",
     "private": true,
     "dependencies": {
         "axios": "^0.21.1",
-        "gh-pages": "^3.1.0",
+        "gh-pages": "^3.2.3",
         "leaflet": "^1.7.1",
         "leaflet.animatedmarker": "^1.0.0",
-        "leaflet.markercluster": "^1.4.1",
-        "node-sass": "^4.14.1",
+        "leaflet.markercluster": "^1.5.0",
+        "node-sass": "^6.0.1",
         "prop-types": "^15.7.2",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
         "react-leaflet": "^2.6.1",
         "react-leaflet-control": "^2.1.2",
-        "react-scripts": "4.0.1"
+        "react-scripts": "4.0.3"
     },
     "scripts": {
         "predeploy": "npm run build",
@@ -43,16 +43,16 @@
         ]
     },
     "devDependencies": {
-        "eslint": "^7.17.0",
+        "eslint": "^7.30.0",
         "eslint-config-airbnb": "^18.2.1",
         "eslint-config-node": "^4.1.0",
-        "eslint-config-prettier": "^7.1.0",
-        "eslint-plugin-import": "^2.22.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-prettier": "^3.3.1",
-        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.24.0",
         "eslint-plugin-react-hooks": "^4.2.0",
-        "prettier": "^2.2.1"
+        "prettier": "^2.3.2"
     }
 }
